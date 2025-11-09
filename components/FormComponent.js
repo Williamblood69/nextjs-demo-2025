@@ -37,7 +37,7 @@ export default function FormComponent({ onSearch }) {
         <Button
           color="dark"
           size="sm"
-          type="submit"
+          type="add"
           className="flex! items-center gap-1"
         >
           <FaPlus color="rgb(255, 255, 255)" />

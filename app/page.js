@@ -36,33 +36,26 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-neutral-900 pb-50">
+    <div className="bg-neutral-900 pb-150">
       <Header />
       <FormComponent onSearch = {handleSearch} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 m-10">
         {filteredProduct.map((item) => (
-          <div>
-            <div 
-              key={item.id}
-              className="bg-neutral-50 flex flex-col text-center border border-gray-300 rounded-3xl hover:shadow-lg hover:shadow-gray-400/60 cursor-pointer transition-all"
-              onClick={() => router.push(`/products/${item.id}`)}
-            >
-              <img 
-                alt={item.title}
-                src={item.thumbnail}
-              />
-              <p className="text-16px font-bold">{item.title}</p>
-              <p className="text-16px">${item.price}</p>
+          <div 
+            key={item.id}
+            className="bg-neutral-50 flex flex-col text-center border border-gray-300 rounded-3xl hover:shadow-lg hover:shadow-gray-400/60 cursor-pointer transition-all"              onClick={() => router.push(`/products/${item.id}`)}
+          >
+            <img 
+              alt={item.title}
+              src={item.thumbnail}
+            />
+            <p className="text-16px font-bold">{item.title}</p>
+            <p className="text-16px">${item.price}</p>
 
-              <div className="pb-4">
-                <Button color="primary" className="flex! self-center gap-1">  
-                  Edit
-                </Button>
-                <Button color="danger" className="flex! self-center gap-1">  
-                  Delete
-                </Button>
-              </div>
+            <div className="pb-4 flex justify-between px-17.5">
+              <Button color="primary">Edit</Button>
+              <Button color="danger">Delete</Button>
             </div>
           </div>
         ))}
